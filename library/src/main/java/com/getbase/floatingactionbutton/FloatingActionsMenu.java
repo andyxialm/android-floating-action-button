@@ -85,7 +85,6 @@ public class FloatingActionsMenu extends ViewGroup {
 
   private void init(Context context, AttributeSet attributeSet) {
     mButtonSpacing = (int) (getResources().getDimension(R.dimen.fab_actions_spacing) - getResources().getDimension(R.dimen.fab_shadow_radius) - getResources().getDimension(R.dimen.fab_shadow_offset));
-    mLabelsMargin = getResources().getDimensionPixelSize(R.dimen.fab_labels_margin);
     mLabelsVerticalOffset = getResources().getDimensionPixelSize(R.dimen.fab_shadow_offset);
 
     mTouchDelegateGroup = new TouchDelegateGroup(this);
@@ -98,6 +97,7 @@ public class FloatingActionsMenu extends ViewGroup {
     mAddButtonSize = attr.getInt(R.styleable.FloatingActionsMenu_fab_addButtonSize, FloatingActionButton.SIZE_NORMAL);
     mAddButtonStrokeVisible = attr.getBoolean(R.styleable.FloatingActionsMenu_fab_addButtonStrokeVisible, true);
     mExpandDirection = attr.getInt(R.styleable.FloatingActionsMenu_fab_expandDirection, EXPAND_UP);
+    mLabelsMargin = attr.getDimensionPixelSize(R.styleable.FloatingActionsMenu_fab_labelMargin, getResources().getDimensionPixelSize(R.dimen.fab_labels_margin));
     mLabelsStyle = attr.getResourceId(R.styleable.FloatingActionsMenu_fab_labelStyle, 0);
     mLabelsPosition = attr.getInt(R.styleable.FloatingActionsMenu_fab_labelsPosition, LABELS_ON_LEFT_SIDE);
     attr.recycle();
